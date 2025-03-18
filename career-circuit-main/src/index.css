@@ -1,0 +1,124 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 220 25% 10%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+    
+    --primary: 220 70% 50%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 215 25% 92%;
+    --secondary-foreground: 220 25% 20%;
+    
+    --muted: 210 20% 92%;
+    --muted-foreground: 220 25% 45%;
+    
+    --accent: 220 70% 96%;
+    --accent-foreground: 220 70% 40%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 220 70% 50%;
+    
+    --radius: 0.75rem;
+  }
+ 
+  .dark {
+    --background: 220 25% 9%;
+    --foreground: 210 20% 98%;
+    
+    --card: 220 25% 12%;
+    --card-foreground: 210 20% 98%;
+    
+    --popover: 220 25% 12%;
+    --popover-foreground: 210 20% 98%;
+    
+    --primary: 220 70% 55%;
+    --primary-foreground: 210 20% 98%;
+    
+    --secondary: 215 25% 18%;
+    --secondary-foreground: 210 20% 98%;
+    
+    --muted: 220 25% 18%;
+    --muted-foreground: 220 25% 65%;
+    
+    --accent: 220 70% 18%;
+    --accent-foreground: 220 70% 80%;
+    
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 210 20% 98%;
+    
+    --border: 220 25% 18%;
+    --input: 220 25% 18%;
+    --ring: 220 70% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  
+  /* Modern scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/50 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full hover:bg-muted-foreground/50 transition-colors;
+  }
+  
+  /* Page transition animations */
+  .page-transition-enter {
+    @apply opacity-0;
+  }
+  
+  .page-transition-enter-active {
+    @apply opacity-100 transition-opacity duration-300;
+  }
+  
+  .page-transition-exit {
+    @apply opacity-100;
+  }
+  
+  .page-transition-exit-active {
+    @apply opacity-0 transition-opacity duration-200;
+  }
+}
+
+/* Custom components */
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-lg border border-white/30 shadow-sm;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+}
